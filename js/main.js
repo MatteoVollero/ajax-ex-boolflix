@@ -46,7 +46,7 @@ $(document).ready(function(){
           var context = {
             "vote_average": data.results[i].vote_average,
             "title": data.results[i].title,
-            "original_language": data.results[i].original_language,
+            "original_language": flags(data.results[i].original_language),
             "original_title": data.results[i].original_title,
             "cont": cont
           };
@@ -83,7 +83,7 @@ $(document).ready(function(){
           var context = {
             "name": data.results[i].name,
             "original_name": data.results[i].original_name,
-            "original_language": data.results[i].original_language,
+            "original_language": flags(data.results[i].original_language),
             "vote_average":data.results[i].vote_average,
             "cont": cont
           };
@@ -107,5 +107,14 @@ $(document).ready(function(){
       $(".star-container[data-number=" + cont +"] i:nth-of-type(" + i + ")").addClass("fas");
     }
   };
+
+  function flags(lingua){
+    switch(lingua){
+      case "en": return "united-kingdom-flag-icon-128.png";
+      case "fr": return "france-flag-icon-128.png";
+      case "it": return "italy-flag-icon-64.png";
+      case "sp": return "spain-flag-icon-128.png";
+    }
+  }
 
 });

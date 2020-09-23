@@ -22,3 +22,23 @@ ul li{
 .fa-star , .fas{
   color: yellow;
 }
+
+h4{
+  display: block;
+}
+
+h5{
+  display: inline;
+}
+
+img{
+  width: 40px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.star-container{
+  display: inline;
+}
