@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Boolflix</title>
+</head>
+<body>
+
+<!-- container iniziale dove si troverà la searchbar -->
+  <div class="container align-center">
+    <input id="string" type="text" name="" value="" placeholder="Search movies">
+    <button id="button" type="button" name="button">Search</button>
+  </div>
+<!--/container iniziale dove si troverà la searchbar -->
+
+  <div class="container">
+    <ul>
+
+    </ul>
+  </div>
+
+
+  <script id="movie-template" type="text/x-handlebars-template">
+    <li>
+      <h1>{{title}}</h1>
+      <h2>{{original_title}}</h2>
+      <p>{{original_language}}</p>
+      <p>{{vote_average}}</p>
+    </li>
+  </script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
