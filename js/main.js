@@ -24,6 +24,7 @@ $(document).ready(function(){
 
   $("#button").click(function(){
     var queryString = "query=" + $("#string").val();
+    var cont = 0;
     $("ul").text("");
     //Chiamata per i film
     $.ajax(
@@ -41,11 +42,19 @@ $(document).ready(function(){
           //Lo compilo
           var template = Handlebars.compile(source);
           //Creo un contesto
-          var context = data.results[i];
+          data.results[i].vote_average = Math.ceil(data.results[i].vote_average/2);
+          var context = {
+            "vote_average": data.results[i].vote_average,
+            "title": data.results[i].title,
+            "original_language": data.results[i].original_language,
+            "original_title": data.results[i].original_title,
+            "cont": cont
+          };
           //Inserisco il contesto nel mio html
           var html = template(context);
-
           $("ul").append(html);
+          starFiller(data.results[i].vote_average,cont);
+          cont ++;
         }
       },
 
@@ -54,7 +63,7 @@ $(document).ready(function(){
       }
     });
 
-    //Chiamata per le serie
+    // Chiamata per le serie
     $.ajax(
     {
       url : "https://api.themoviedb.org/3/search/tv?page=1&include_adult=false&api_key=273d0646cfc5ade7d91008e037afec3d&language=it-IT&" + queryString,
@@ -70,11 +79,19 @@ $(document).ready(function(){
           //Lo compilo
           var template = Handlebars.compile(source);
           //Creo un contesto
-          var context = data.results[i];
+          data.results[i].vote_average = Math.ceil(data.results[i].vote_average/2);
+          var context = {
+            "name": data.results[i].name,
+            "original_name": data.results[i].original_name,
+            "original_language": data.results[i].original_language,
+            "vote_average":data.results[i].vote_average,
+            "cont": cont
+          };
           //Inserisco il contesto nel mio html
           var html = template(context);
-
           $("ul").append(html);
+          starFiller(data.results[i].vote_average,cont);
+          cont ++;
         }
       },
 
@@ -84,5 +101,11 @@ $(document).ready(function(){
     });
 
   });
+
+  function starFiller(voto,cont){
+    for(var i = 1; i <= voto; i ++){
+      $(".star-container[data-number=" + cont +"] i:nth-of-type(" + i + ")").addClass("fas");
+    }
+  };
 
 });

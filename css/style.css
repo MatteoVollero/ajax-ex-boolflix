@@ -18,3 +18,7 @@ ul li{
   margin-bottom: 10px;
   list-style: none;
 }
+
+.fa-star , .fas{
+  color: yellow;
+}
