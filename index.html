@@ -26,14 +26,28 @@
   </div>
 
 
+<!-- Template per i film -->
   <script id="movie-template" type="text/x-handlebars-template">
     <li>
-      <h1>{{title}}</h1>
-      <h2>{{original_title}}</h2>
-      <h3>{{original_language}}</h3>
-      <h4>{{vote_average}}</h4>
+      <h1>FILM</h1>
+      <h1>TITOLO: {{title}}</h1>
+      <h2>TITOLO ORIGINALE: {{original_title}}</h2>
+      <h3>LINGUA ORIGINALE: {{original_language}}</h3>
+      <h4>VOTO: {{vote_average}}</h4>
     </li>
   </script>
+  <!--/Template per i film -->
+  <!-- Template per le serie -->
+  <script id="series-template" type="text/x-handlebars-template">
+    <li>
+      <h1>SERIE</h1>
+      <h2>NOME: {{name}}</h2>
+      <h3>NOME ORIGINALE: {{original_name}}</h3>
+      <h4>LINGUA ORIGINALE: {{original_language}}</h4>
+      <h5>VOTO: {{vote_average}}</h5>
+    </li>
+  </script>
+  <!--/Template per le serie -->
   <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
