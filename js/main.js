@@ -5,26 +5,14 @@
 //273d0646cfc5ade7d91008e037afec3d
 /*****************API_KEY******************************/
 
+// URL base delle immagini: https://image.tmdb.org/t/p/w185/l'url finale dell'immagine
 
-
-// Milestone 1
-// Creare un layout base con una searchbar (una input e un button) in cui possiamo scrivere completamente o parzialmente il nome di un film. Possiamo, cliccando il  bottone, cercare sull’API tutti i film che contengono ciò che ha scritto l’utente.
-// Vogliamo dopo la risposta dell’API visualizzare a schermo i seguenti valori per ogni film trovato:
-// Titolo
-// Titolo Originale
-// Lingua
-// Voto
-// https://api.themoviedb.org/3/search/movie?api_key=273d0646cfc5ade7d91008e037afec3d&language=it-IT&page=1&include_adult=false&
-// questa sarà la query string query=il signore degli anelli
-// Milestone 2:
-// Trasformiamo il voto da 1 a 10 decimale in un numero intero da 1 a 5, così da permetterci di stampare a schermo un numero di stelle piene che vanno da 1 a 5, lasciando le restanti vuote (troviamo le icone in FontAwesome).
-// Arrotondiamo sempre per eccesso all’unità successiva, non gestiamo icone mezze piene (o mezze vuote :P)
-// Trasformiamo poi la stringa statica della lingua in una vera e propria bandiera della nazione corrispondente, gestendo il caso in cui non abbiamo la bandiera della nazione ritornata dall’API (le flag non ci sono in FontAwesome).
 $(document).ready(function(){
 
   $("#button").click(function(){
     var queryString = "query=" + $("#string").val();
     var cont = 0;
+    var urlBase = "https://image.tmdb.org/t/p/w185/";
     $("ul").text("");
     //Chiamata per i film
     $.ajax(
@@ -48,7 +36,8 @@ $(document).ready(function(){
             "title": data.results[i].title,
             "original_language": flags(data.results[i].original_language),
             "original_title": data.results[i].original_title,
-            "cont": cont
+            "cont": cont,
+            "image": urlBase + data.results[i].backdrop_path
           };
           //Inserisco il contesto nel mio html
           var html = template(context);
@@ -85,7 +74,8 @@ $(document).ready(function(){
             "original_name": data.results[i].original_name,
             "original_language": flags(data.results[i].original_language),
             "vote_average":data.results[i].vote_average,
-            "cont": cont
+            "cont": cont,
+            "image": urlBase + data.results[i].backdrop_path
           };
           //Inserisco il contesto nel mio html
           var html = template(context);

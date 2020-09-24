@@ -12,17 +12,34 @@
 </head>
 <body>
 
-<!-- container iniziale dove si troverà la searchbar -->
-  <div class="container align-center">
-    <input id="string" type="text" name="" value="" placeholder="Search movies">
-    <button id="button" type="button" name="button">Search</button>
+<header>
+  <!-- container iniziale dove si troverà la searchbar -->
+    <div class="container align-center flex between">
+      <h2 class="header-title">BOOLFLIX</h2>
+      <div class="">
+        <input id="string" type="text" name="" value="" placeholder="Search movies">
+        <button id="button" type="button" name="button">Search</button>
+      </div>
+    </div>
+  <!--/container iniziale dove si troverà la searchbar -->
+</header>
+
+
+<main class="flex">
+  <div class="prototype-poster">
+    <img class="poster-image" src="https://image.tmdb.org/t/p/w400/adZ9ldSlkGfLfsHNbh37ZThCcgU.jpg" alt="">
   </div>
-<!--/container iniziale dove si troverà la searchbar -->
+  <p>ciao ciao </p>
+
+  <div class="prototype-poster">
+    <img class="poster-image" src="https://image.tmdb.org/t/p/w400/adZ9ldSlkGfLfsHNbh37ZThCcgU.jpg" alt="">
+  </div>
 
   <div class="container">
     <ul>
 
     </ul>
+</main>
   </div>
 
 
@@ -41,6 +58,7 @@
         <i class="far fa-star"></i>
         <i class="far fa-star"></i>
       </div>
+      <img class="copertina" src="{{image}}" alt="Copertina">
     </li>
   </script>
   <!--/Template per i film -->
@@ -59,6 +77,7 @@
         <i class="far fa-star"></i>
         <i class="far fa-star"></i>
       </div>
+      <img class="copertina" src="{{image}}" alt="Copertina">
     </li>
   </script>
   <!--/Template per le serie -->
