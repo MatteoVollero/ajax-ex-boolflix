@@ -25,59 +25,69 @@
 </header>
 
 
-<main class="flex">
-  <div class="prototype-poster">
-    <img class="poster-image" src="https://image.tmdb.org/t/p/w400/adZ9ldSlkGfLfsHNbh37ZThCcgU.jpg" alt="">
-  </div>
-  <p>ciao ciao </p>
+<main>
 
-  <div class="prototype-poster">
-    <img class="poster-image" src="https://image.tmdb.org/t/p/w400/adZ9ldSlkGfLfsHNbh37ZThCcgU.jpg" alt="">
+
+
+  <h1>FILM</h1>
+    <div class="container">
+      <ul id="movie">
+
+      </ul>
   </div>
 
+  <h1>SERIE</h1>
   <div class="container">
-    <ul>
+    <ul id="series">
 
     </ul>
-</main>
   </div>
+</main>
 
 
 <!-- Template per i film -->
   <script id="movie-template" type="text/x-handlebars-template">
     <li>
-      <h1>FILM</h1>
-      <h2>TITOLO: {{title}}</h2>
-      <h3>TITOLO ORIGINALE: {{original_title}}</h3>
-      <h4>LINGUA ORIGINALE: <img src="img/{{original_language}}" alt="Bandiera lingua"></h4>
-      <h5>VOTO: </h5>
-      <div class="star-container" data-number="{{cont}}">
-        <i class="far fa-star"></i>
-        <i class="far fa-star"></i>
-        <i class="far fa-star"></i>
-        <i class="far fa-star"></i>
-        <i class="far fa-star"></i>
-      </div>
-      <img class="copertina" src="{{image}}" alt="Copertina">
+        <div class="prototype-poster">
+          <div class="poster-image">
+            <img class="copertina" src="{{image}}" alt="Copertina">
+            <div class="positioner">
+              <p><strong>TITOLO:</strong> {{title}}</p>
+              <p><strong>TITOLO ORIGINALE:</strong> {{original_title}}</p>
+              <p><strong>VOTO:</strong> </p>
+              <div class="star-container" data-number="{{cont}}">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
     </li>
   </script>
   <!--/Template per i film -->
   <!-- Template per le serie -->
   <script id="series-template" type="text/x-handlebars-template">
     <li>
-      <h1>SERIE</h1>
-      <h2>NOME: {{name}}</h2>
-      <h3>NOME ORIGINALE: {{original_name}}</h3>
-      <h4>LINGUA ORIGINALE: <img src="img/{{original_language}}" alt="Bandiera lingua"></h4>
-      <h5>VOTO: </h5>
-      <div class="star-container" data-number="0">
-        <i class="far fa-star"></i>
-        <i class="far fa-star"></i>
-        <i class="far fa-star"></i>
-        <i class="far fa-star"></i>
-        <i class="far fa-star"></i>
+      <div class="prototype-poster">
+        <div class="poster-image">
+          <img class="copertina" src="{{image}}" alt="Copertina">
+          <div class="positioner">
+            <p><strong>TITOLO:</strong> {{name}}</p>
+            <p><strong>TITOLO ORIGINALE:</strong> {{original_name}}</p>
+            <p><strong>VOTO:</strong> </p>
+            <div class="star-container" data-number="{{cont}}">
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+          </div>
+        </div>
       </div>
-      <img class="copertina" src="{{image}}" alt="Copertina">
     </li>
   </script>
   <!--/Template per le serie -->

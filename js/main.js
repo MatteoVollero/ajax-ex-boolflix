@@ -12,7 +12,7 @@ $(document).ready(function(){
   $("#button").click(function(){
     var queryString = "query=" + $("#string").val();
     var cont = 0;
-    var urlBase = "https://image.tmdb.org/t/p/w185/";
+    var urlBase = "https://image.tmdb.org/t/p/w400/";
     $("ul").text("");
     //Chiamata per i film
     $.ajax(
@@ -41,7 +41,7 @@ $(document).ready(function(){
           };
           //Inserisco il contesto nel mio html
           var html = template(context);
-          $("ul").append(html);
+          $("#movie").append(html);
           starFiller(data.results[i].vote_average,cont);
           cont ++;
         }
@@ -79,11 +79,11 @@ $(document).ready(function(){
           };
           //Inserisco il contesto nel mio html
           var html = template(context);
-          $("ul").append(html);
+          $("#series").append(html);
           starFiller(data.results[i].vote_average,cont);
           cont ++;
         }
-      },
+     },
 
       error: function(richiesta,stato,errore){
         console.log("Errore --> " + errore);
